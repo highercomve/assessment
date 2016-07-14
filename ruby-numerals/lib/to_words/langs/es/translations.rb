@@ -6,6 +6,10 @@ module ToWords
           %w[~ uno dos tres cuatro cinco seis siete ocho nueve]
         end
 
+        def units_of
+          %w[~ un dos tres cuatro cinco seis siete ocho nueve]
+        end
+
         def teen
           %w[diez once doce trece catorce quince dieciseis diecisiete dieciocho diecinueve]
         end
@@ -23,7 +27,7 @@ module ToWords
         end
 
         def hundreds
-          %w[~ ciento doscientos trecientos cuatrocientos quinientos seiscientos setecientos ochocientos novecientos]
+          %w[~ ciento docientos trecientos cuatrocientos quinientos seiscientos setecientos ochocientos novecientos]
         end
 
         def megas_singular

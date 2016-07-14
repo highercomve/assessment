@@ -13,7 +13,11 @@ module ToWords
 
         private
         def unit (number)
-          @translations.units[number]
+          if @index > 1
+            @translations.units_of[number]
+          else 
+            @translations.units[number]
+          end 
         end
 
         def teen (number)

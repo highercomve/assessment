@@ -88,8 +88,8 @@ describe ToWords do
   it 'hundreds in spanish' do
     expect(156.to_words(:es)).to eq('ciento cincuenta y seis')
     expect(975.to_words(:es)).to eq('novecientos setenta y cinco')
-    expect(200.to_words(:es)).to eq('doscientos')
-    expect(201.to_words(:es)).to eq('doscientos uno')
+    expect(200.to_words(:es)).to eq('docientos')
+    expect(201.to_words(:es)).to eq('docientos uno')
     expect(300.to_words(:es)).to eq('trecientos')
     expect(400.to_words(:es)).to eq('cuatrocientos')
     expect(500.to_words(:es)).to eq('quinientos')
@@ -102,6 +102,7 @@ describe ToWords do
   it 'other big numbers in spanish' do
     expect(4_356_782.to_words(:es)).to eq('cuatro millones trecientos cincuenta y seis mil setecientos ochenta y dos')
     expect(10_001.to_words(:es)).to eq('diez mil uno')
+    expect(201_250.to_words(:es)).to eq('docientos un mil docientos cincuenta')
   end
 
 
