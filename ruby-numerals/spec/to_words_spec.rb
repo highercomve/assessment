@@ -8,7 +8,7 @@ describe ToWords do
   it 'Units in english' do
     expect(1.to_words).to eq('one')
     expect(2.to_words).to eq('two')
-    expect(3.to_words).to eq('tree')
+    expect(3.to_words).to eq('three')
     expect(4.to_words).to eq('four')
     expect(5.to_words).to eq('five')
     expect(6.to_words).to eq('six')
@@ -40,6 +40,12 @@ describe ToWords do
     expect(975.to_words).to eq('nine hundred seventy-five')
     expect(200.to_words).to eq('two hundred')
     expect(201.to_words).to eq('two hundred one')
+  end
+
+  it 'other big numbers in english' do
+    expect(4356782.to_words).to eq('four million three hundred fifty-six thousand seven hundred eighty-two')
+    expect(10001.to_words).to eq('ten thousand one')
+    expect(961151312398.to_words).to eq('nine hundred sixty-one billion one hundred fifty-one million three hundred twelve thousand three hundred ninety-eight')
   end
 
 end

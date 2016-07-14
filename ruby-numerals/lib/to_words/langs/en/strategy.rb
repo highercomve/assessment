@@ -7,7 +7,7 @@ module ToWords
         LANG = :en
         private
         def unit (number)
-          units = %w[~ one two tree four five six seven eight nine]
+          units = %w[~ one two three four five six seven eight nine]
           units[number]
         end
 
