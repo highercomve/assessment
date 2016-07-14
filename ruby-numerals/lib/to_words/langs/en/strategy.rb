@@ -1,14 +1,18 @@
 require 'to_words/strategy_base'
+require 'to_words/langs/en/translations'
 
 module ToWords
   module Langs
     module En
       class Strategy < ToWords::StrategyBase
-        LANG = :en
+        def initialize (number, index)
+          super number, index
+          @translations = ToWords::Langs::En::Translations.new()
+        end
+
         private
         def unit (number)
-          units = %w[~ one two three four five six seven eight nine]
-          units[number]
+          @translations.units[number]
         end
 
         def teen (number)
@@ -16,24 +20,21 @@ module ToWords
           return "#{unit(rest)}" if teen_unit == 0
           
           if teen_unit == 1
-            teens = %w[ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen]
-            teens[rest]
+            @translations.teen[rest]
           else 
-            teens = %w[~ twenty thirty forty fifty sixty seventy eighty ninety]
             unit_text = (unit(rest) != '~') ? "-#{unit(rest)}" : ""
-            "#{teens[teen_unit - 1]}#{unit_text}" 
+            "#{@translations.teens[teen_unit - 1]}#{unit_text}" 
           end
         end
 
         def hundred (number)
           hundred_unit, rest = number.divmod(100)
-          hundred_text = (hundred_unit > 0) ? "#{unit(hundred_unit)} hundred" : ""
+          hundred_text = (hundred_unit > 0) ? "#{unit(hundred_unit)} #{@translations.hundred}" : ""
           "#{hundred_text} #{teen(rest)}"
         end
 
         def mega (number, index)        
-          megas = %w[thousand million billion trillion]
-          megas_text = (number > 0) ? megas[index - 2] : ''
+          megas_text = (number > 0) ? @translations.megas[index - 2] : ''
           "#{hundred(number)} #{megas_text}"
         end
       end

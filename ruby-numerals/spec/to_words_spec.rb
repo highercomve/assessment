@@ -48,4 +48,62 @@ describe ToWords do
     expect(961151312398.to_words).to eq('nine hundred sixty-one billion one hundred fifty-one million three hundred twelve thousand three hundred ninety-eight')
   end
 
+  it 'Units in spanish' do
+    expect(1.to_words(:es)).to eq('uno')
+    expect(2.to_words(:es)).to eq('dos')
+    expect(3.to_words(:es)).to eq('tres')
+    expect(4.to_words(:es)).to eq('cuatro')
+    expect(5.to_words(:es)).to eq('cinco')
+    expect(6.to_words(:es)).to eq('seis')
+    expect(7.to_words(:es)).to eq('siete')
+    expect(8.to_words(:es)).to eq('ocho')
+    expect(9.to_words(:es)).to eq('nueve')
+ end
+
+  it 'Teens from 10 to 19 in spanish' do
+    expect(10.to_words(:es)).to eq('diez')
+    expect(11.to_words(:es)).to eq('once')
+    expect(12.to_words(:es)).to eq('doce')
+    expect(13.to_words(:es)).to eq('trece')
+    expect(15.to_words(:es)).to eq('quince')
+    expect(16.to_words(:es)).to eq('dieciseis')
+    expect(17.to_words(:es)).to eq('diecisiete')
+    expect(18.to_words(:es)).to eq('dieciocho')
+    expect(19.to_words(:es)).to eq('diecinueve')
+  end
+
+  it 'teen between 20 and 29 in spanish' do
+    expect(20.to_words(:es)).to eq('veinte')
+    expect(25.to_words(:es)).to eq('venticinco')
+    expect(29.to_words(:es)).to eq('ventinueve')
+  end
+
+  it 'teen between 30 and 99 in spanish' do
+    expect(30.to_words(:es)).to eq('treinta')
+    expect(35.to_words(:es)).to eq('treinta y cinco')
+    expect(50.to_words(:es)).to eq('cincuenta')
+    expect(89.to_words(:es)).to eq('ochenta y nueve')
+  end
+
+  it 'hundreds in spanish' do
+    expect(156.to_words(:es)).to eq('ciento cincuenta y seis')
+    expect(975.to_words(:es)).to eq('novecientos setenta y cinco')
+    expect(200.to_words(:es)).to eq('doscientos')
+    expect(201.to_words(:es)).to eq('doscientos uno')
+    expect(300.to_words(:es)).to eq('trecientos')
+    expect(400.to_words(:es)).to eq('cuatrocientos')
+    expect(500.to_words(:es)).to eq('quinientos')
+    expect(600.to_words(:es)).to eq('seiscientos')
+    expect(700.to_words(:es)).to eq('setecientos')
+    expect(800.to_words(:es)).to eq('ochocientos')
+    expect(900.to_words(:es)).to eq('novecientos')
+  end
+
+  it 'other big numbers in spanish' do
+    expect(4_356_782.to_words(:es)).to eq('cuatro millones trecientos cincuenta y seis mil setecientos ochenta y dos')
+    expect(10_001.to_words(:es)).to eq('diez mil uno')
+  end
+
+
+
 end
