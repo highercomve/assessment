@@ -7,7 +7,7 @@ describe ToWords do
 
   it 'Default convertion must be english' do
     expect(1.to_words).to eq('one')
-    expect(42.to_words).to eq('forty-two')
+    expect(42.to_words).to eq('forty two')
     expect(2001.to_words).to eq('two thousand and one')
     expect(1999.to_words).to eq('nineteen hundred and ninety-nine')
   end
